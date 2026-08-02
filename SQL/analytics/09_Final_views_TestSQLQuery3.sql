@@ -1,5 +1,6 @@
+USE CustomerChurnDW;
+Go
 
--- Final Test  Query
 
 SELECT * 
 FROM analytics.vw_Churn_KPI;
@@ -10,14 +11,16 @@ FROM analytics.vw_Churn_By_Contract;
 SELECT * 
 FROM analytics.vw_Churn_By_Payment;
 
+
 SELECT * 
 FROM analytics.vw_Churn_By_Internet;
 
 SELECT * 
-FROM analytics.vw_Customer_Profile;
+FROM  analytics.vw_Customer_Profile;
 
 SELECT * 
 FROM analytics.vw_Revenue_Analysis;
+
 
 SELECT * 
 FROM analytics.vw_Customer_Risk;
