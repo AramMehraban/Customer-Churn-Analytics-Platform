@@ -8,27 +8,29 @@ AS
 
 SELECT
 
+
   COUNT(*) AS TotalCustomers,
 
-  SUM(CAST(ChurnKey AS INT))
+
+  SUM(CAST(ChurnFlag AS INT))
   AS TotalChurn,
 
 
   COUNT(*)-
-  SUM(CAST(ChurnKey AS INT))
+  SUM(CAST(ChurnFlag AS INT))
   AS ActiveCustomers,
 
 
   CAST(
 
-    SUM(CAST(ChurnKey AS FLOAT))
+    SUM(CAST(ChurnFlag AS FLOAT))
     /
     COUNT(*)
 
-  AS DECIMAL(5,2)
+    AS DECIMAL(5,2)
 
-  )
-  AS OverallChurnRate,
+    )
+    AS OverallChurnRate,
 
 
   SUM(MonthlyCharges)
@@ -36,12 +38,12 @@ SELECT
 
 
   SUM(
-    CASE
-    WHEN ChurnKey=1
-      THEN MonthlyCharges
-      ELSE 0
-    END
-  )
+	  CASE
+	  WHEN ChurnFlag=1
+	  	THEN MonthlyCharges
+	  	ELSE 0
+	  END
+	)
   AS RevenueAtRisk
 
 
