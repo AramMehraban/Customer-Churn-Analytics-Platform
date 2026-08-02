@@ -1,0 +1,17 @@
+USE CustomerChurnDW;
+GO
+
+  
+-- Create Schemas 
+
+CREATE SCHEMA staging;
+GO
+
+CREATE SCHEMA dim;
+GO
+
+CREATE SCHEMA fact;
+GO
+
+CREATE SCHEMA analytics;
+GO
