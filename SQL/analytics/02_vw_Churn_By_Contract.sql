@@ -5,28 +5,29 @@ GO
 CREATE OR ALTER VIEW analytics.vw_Churn_By_Contract
 AS
 
+
 SELECT
 
-    ct.Contract,
+        ct.Contract,
 
-    COUNT(*) AS Customers,
-
-
-    SUM(CAST(f.ChurnKey AS INT))
-    AS ChurnCustomers,
+        COUNT(*) AS Customers,
 
 
-    CAST(
-      SUM(CAST(f.ChurnKey AS FLOAT))
-      /
-      COUNT(*)
-    AS DECIMAL(5,2)
-    )
-    AS ChurnRate,
+        SUM(CAST(f.ChurnFlag AS INT))
+        AS ChurnCustomers,
 
 
-    AVG(f.MonthlyCharges)
-    AS AvgMonthlyCharges
+        CAST(
+            SUM(CAST(f.ChurnFlag AS FLOAT))
+            /
+            COUNT(*)
+        AS DECIMAL(5,2)
+        )
+        AS ChurnRate,
+
+
+        AVG(f.MonthlyCharges)
+        AS AvgMonthlyCharges
 
 
 FROM fact.FactCustomerChurn f
@@ -35,6 +36,16 @@ FROM fact.FactCustomerChurn f
 JOIN dim.DimContract ct
 ON f.ContractKey=ct.ContractKey
 
-GROUP BY  ct.Contract;
 
+GROUP BY
+ct.Contract;
+
+GO
+
+
+
+-- Test Query
+
+SELECT * 
+FROM  analytics.vw_Churn_By_Contract;
 GO
