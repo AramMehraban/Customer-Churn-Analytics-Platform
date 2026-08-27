@@ -1,1 +1,1 @@
-# Customer-Churn-Analytics-Platform
+# Telco-Customer-Churn-Analytics-Platform
