@@ -14,6 +14,12 @@ An end-to-end Customer Churn Analytics Platform developed to identify churn driv
 
 The project covers the complete analytics workflow — from raw data preparation and SQL-based analysis to data modeling, Power BI dashboard development, DAX KPI creation, customer risk scoring, and business recommendations.
 
+### Currency
+
+All financial values in this project are presented in **USD ($)**, consistent with the original dataset.
+
+No currency conversion was applied. Financial metrics such as Monthly Charges, Total Revenue, Revenue Lost, and Revenue at Risk are therefore reported in USD.
+
 
 ## Business Objective
 
@@ -119,10 +125,11 @@ The model separates analytical facts from descriptive dimensions to support a sc
 
 ### Revenue Impact
 
-*Financial impact is analyzed through:*
+*Financial impact is analyzed in USD ($) through:*
 
 - Revenue lost from churned customers
 - Revenue currently at risk
+- Total monthly revenue
 - Revenue impact by contract type
 - Financial exposure of high-risk customers
 
@@ -139,7 +146,7 @@ The model separates analytical facts from descriptive dimensions to support a sc
 Customers are classified into four risk levels:
 
 - 🔴 **Critical Risk**
-- 🟠 **Hih Risk**
+- 🟠 **High Risk**
 - 🟡 **Medium Risk**
 - 🟢 **Low Risk**
 
@@ -221,14 +228,27 @@ This allows retention activities to be prioritized based on customer risk and fi
 
 ## Key Results
 
+## Key Results
+
 | **KPI** | **Result** |
-|---|---|
-| Churn Rate: | 26.54% |
-| Critical Risk Customers: | 467 |
-| Critical Risk Revenue:  | $39.64K |
-| Revenue at Risk: |  $10.24K | 
+|---|---:|
+| Total Customers | 7,043 |
+| Active Customers | 5,174 |
+| Churned Customers | 1,869 |
+| Churn Rate | 26.54% |
+| Total Monthly Revenue | $456.12K |
+| Revenue at Risk | $2.86M |
+| Critical Risk Customers | 467 |
+| Critical Risk Revenue | $39.64K |
+
+
+### Financial Metrics
+
+All financial values are reported in **USD ($)** based on the original dataset. No currency conversion was applied.
 
 These KPIs provide an executive-level view of customer churn and its potential financial impact.
+
+The analysis combines customer behavior and financial metrics to identify churn drivers and quantify their potential impact on recurring revenue.
 
 Note: Financial values are based on the current analytical model and dataset used in the project.
 
